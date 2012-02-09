@@ -1,0 +1,9 @@
+
+<% if @pounds.blank? %>
+  <h4>Text field cannot be blank.  Please enter your weight load.</h4>
+<% elsif @pounds.to_i <= 0 %>
+  <h4>Please enter a valid weight number.</h4>
+<% else %>
+  <h4>Your laundry weighs <span class="blue"><%= pluralize(@pounds, "lb") %></span>.</h4>
+  <h4>Your estimated cost is <span class="blue">$<%= sprintf("%.2f", @prices) %></span>.</h4>
+<% end %>

@@ -1,0 +1,110 @@
+<script>
+$(document).scroll(function() {
+    console.log($(document).scrollTop());
+});
+</script>
+
+<div class="row">
+  <div class="six columns push-six">
+    <div id="ajaxcrap"></div>
+  </div>
+  <div class="six columns pull-six">
+    <div id="calculator">
+      <h5>Please enter your weight load in our calculator to find your cost</h5><br/>
+      <% form_tag({:action => "calculator"}, :method => :get, :remote => true, :class=>'nice') do %>
+        <%= text_field_tag 'pounds', @pounds, :class=> 'oversize input-text' %><br/>
+        <%= submit_tag 'Get Price', :class=>'nice medium radius white button' %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="row" style="display:none">
+  <a href="#" id="buttonForModal">Show Prices</a>
+	<div id="myModal" class="reveal-modal">
+	<a class="close-reveal-modal" href="#">Close</a>
+		<table id="tableid">
+			<thead>
+				<tr>
+				<th><h4>Weight (lbs)</h4></th>
+				<th><h4>Prices</h4></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr><th>1-10</th><th>$7.00</th></tr>
+				<tr><th>11</th><th>$7.50</th></tr>
+				<tr><th>12</th><th>$8.00</th></tr>
+				<tr><th>13</th><th>$9.00</th></tr>
+				<tr><th>14</th><th>$9.50</th></tr>
+				<tr><th>15</th><th>$10.00</th></tr>
+				<tr><th>16</th><th>$10.50</th></tr>
+				<tr><th>17</th><th>$11.00</th></tr>
+				<tr><th>18</th><th>$11.50</th></tr>
+				<tr><th>19</th><th>$12.00</th></tr>
+				<tr><th>20</th><th>$12.50</th></tr>
+				<tr><th>21</th><th>$13.00</th></tr>
+				<tr><th>22</th><th>$13.50</th></tr>
+				<tr><th>23</th><th>$14.00</th></tr>
+				<tr><th>24</th><th>$14.50</th></tr>
+				<tr><th>25</th><th>$15.00</th></tr>
+				<tr><th>26</th><th>$15.50</th></tr>
+				<tr><th>27</th><th>$16.00</th></tr>
+				<tr><th>28</th><th>$16.50</th></tr>
+				<tr><th>29</th><th>$17.00</th></tr>
+				<tr><th>30</th><th>$17.50</th></tr>
+				<tr><th>31</th><th>$18.00</th></tr>
+				<tr><th>32</th><th>$18.50</th></tr>				
+				<tr><th>33</th><th>$19.00</th></tr>
+				<tr><th>34</th><th>$19.50</th></tr>
+				<tr><th>35</th><th>$20.00</th></tr>
+				<tr><th>36</th><th>$20.50</th></tr>
+				<tr><th>37</th><th>$21.00</th></tr>
+				<tr><th>38</th><th>$21.50</th></tr>
+				<tr><th>39</th><th>$22.00</th></tr>
+				<tr><th>40</th><th>$22.50</th></tr>
+				<tr><th>41</th><th>$23.00</th></tr>
+				<tr><th>42</th><th>$23.50</th></tr>				
+				<tr><th>43</th><th>$24.00</th></tr>
+				<tr><th>44</th><th>$24.50</th></tr>
+				<tr><th>45</th><th>$25.00</th></tr>
+				<tr><th>46</th><th>$25.50</th></tr>
+				<tr><th>47</th><th>$26.00</th></tr>
+				<tr><th>48</th><th>$26.50</th></tr>
+				<tr><th>49</th><th>$27.00</th></tr>
+				<tr><th>50</th><th>$27.50</th></tr>
+				<tr><th>51</th><th>$28.00</th></tr> 
+				<tr><th>52</th><th>$28.50</th></tr>				
+				<tr><th>53</th><th>$29.00</th></tr>
+				<tr><th>54</th><th>$29.50</th></tr>
+				<tr><th>55</th><th>$30.00</th></tr>
+				<tr><th>56</th><th>$30.50</th></tr>
+				<tr><th>57</th><th>$31.00</th></tr>
+				<tr><th>58</th><th>$31.50</th></tr>
+				<tr><th>59</th><th>$32.00</th></tr>
+				<tr><th>60</th><th>$32.50</th></tr>
+				<tr><th>61</th><th>$33.00</th></tr>
+				<tr><th>62</th><th>$33.50</th></tr>				
+				<tr><th>63</th><th>$34.00</th></tr>
+				<tr><th>64</th><th>$34.50</th></tr>
+				<tr><th>65</th><th>$35.00</th></tr>
+				<tr><th>66</th><th>$35.50</th></tr>
+				<tr><th>67</th><th>$36.00</th></tr>
+				<tr><th>68</th><th>$36.50</th></tr>
+				<tr><th>69</th><th>$37.00</th></tr>
+				<tr><th>70</th><th>$37.50</th></tr>
+				<tr><th>71</th><th>$38.00</th></tr>
+				<tr><th>72</th><th>$38.50</th></tr>				
+				<tr><th>73</th><th>$39.00</th></tr>
+				<tr><th>74</th><th>$39.50</th></tr>
+				<tr><th>75</th><th>$40.00</th></tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<script type="text/javascript">
+     $(document).ready(function() {
+          $('#buttonForModal').click(function() {
+               $('#myModal').reveal();
+     });
+});
+</script>

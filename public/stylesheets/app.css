@@ -1,0 +1,335 @@
+/* Foundation v2.1.4 http://foundation.zurb.com */
+/* Artfully masterminded by ZURB  */
+
+/* -------------------------------------------------- 
+   Table of Contents
+-----------------------------------------------------
+:: Shared Styles
+:: Page Name 1
+:: Page Name 2
+*/
+
+
+/* -----------------------------------------
+   Shared Styles
+----------------------------------------- */
+
+#top_nav{
+	background: #000;
+	height: 20px;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	z-index: 1000;
+}
+
+#header{
+	border-bottom: 1px solid #DADADA;
+	padding: 20px 0;
+	position: fixed;
+	width: 100%;
+	background: #F0F0F0;
+	z-index: 1000;
+	top: 20px;
+}
+
+a#logo{
+	background: url(../images/logo10.png) no-repeat 0 0;
+	display: block;
+	height: 85px;
+	opacity: 1;
+	width: 350px;
+	text-indent: -9999px;
+}
+
+a#logo:hover{
+	background-position: 0 -85px;
+}
+
+#navigation{
+  position: relative;
+  height: 85px;
+}
+
+#navigation ul{
+  float: left;
+  position: absolute;
+  bottom: 0; right:0;
+  margin: 0; padding: 0;
+}
+
+#navigation ul li{
+  float: left;
+  margin: 0 20px 0 0;
+}
+
+#navigation ul li a{
+  color: #181818;
+  font-weight: bold;
+  line-height: 1.25;
+  font-size: 21px;
+  padding-left: 30px;
+  text-shadow: 0px 1px 1px #fff;
+}
+
+#navigation ul li a:hover{
+  color: #D6D6D6;
+}
+
+#navigation ul li.active a{
+	color: #00A6FF;
+}
+
+#navigation ul li a#storemenu { background: url(../images/nav-store.png) no-repeat 0 0;}
+#navigation ul li a#storemenu:hover { background-position: 0 -25px; }
+#navigation ul li.active a#storemenu { background-position: 0 -50px; }
+
+#navigation ul li a#pricesmenu { background: url(../images/nav-prices.png) no-repeat 0 0;}
+#navigation ul li a#pricesmenu:hover { background-position: 0 -25px; }
+#navigation ul li.active a#pricesmenu { background-position: 0 -50px; }
+
+#navigation ul li a#locationmenu { background: url(../images/nav-location.png) no-repeat 0 0;}
+#navigation ul li a#locationmenu:hover { background-position: 0 -25px; }
+#navigation ul li.active a#locationmenu { background-position: 0 -50px; }
+
+
+#main{
+	margin-top: 145px;
+}
+
+/* -----------------------------------------
+    PRICES
+----------------------------------------- */
+#sidemenu{
+	position: fixed;
+	top: 145px;
+  height: 100%;
+  width: 100%;
+  border-left: 1px solid #cccccc;
+  background: #f1f1f1;
+}
+
+#sidemenu ul li{
+	margin: 0;
+  padding: 20px 0 20px 20px;
+  border-bottom: 1px solid #cccccc;
+}
+
+#sidemenu ul li.selected a{
+	color: #00A6FF;
+}
+
+a#selfservice, a#dropservice, a#dryclean{
+	padding-top: 130px;
+}
+
+a#selfsidemenu, a#dropsidemenu, a#drysidemenu{
+	padding-left:45px;
+	line-height: 30px;
+	display: block;
+	color: #000;
+}
+
+a#selfsidemenu{
+	background: url(../images/self.png) no-repeat 0 0;
+}
+
+a#selfsidemenu:hover{
+  color: #004482;
+	background: url(../images/self.png) no-repeat 0 -30px;
+}
+
+
+#sidemenu ul li.selected a#selfsidemenu{
+	background: url(../images/self.png) no-repeat 0 -60px;
+}
+
+a#dropsidemenu{
+	background: url(../images/dropoff.png) no-repeat 0 0;
+}
+
+a#dropsidemenu:hover{
+  color: #004482;
+	background: url(../images/dropoff.png) no-repeat 0 -30px;
+}
+
+#sidemenu ul li.selected a#dropsidemenu{
+	background: url(../images/dropoff.png) no-repeat 0 -60px;
+}
+
+a#drysidemenu{
+	background: url(../images/dry.png) no-repeat 0 0;
+}
+
+a#drysidemenu:hover{
+  color: #004482;
+	background: url(../images/dry.png) no-repeat 0 -30px;
+}
+
+#sidemenu ul li.selected a#drysidemenu{
+	background: url(../images/dry.png) no-repeat 0 -60px;
+}
+
+h3.self, h3.drop, h3.dry{
+  margin-top: 15px;
+  padding-left: 45px;
+  background: url(../images/selfdropdry.png) no-repeat;
+}
+
+h3.self { background-position: 0 0; }
+
+h3.drop { background-position: 0 -35px; }
+
+h3.dry { background-position: 0 -70px; }
+
+@media handheld, only screen and (max-width: 767px) {
+  h3.self, h3.drop, h3.dry{ padding-left: 35px; background: url(../images/selfdropdry1.png) no-repeat; }
+  h3.self { background-position: 0 0; }
+  h3.drop { background-position: 0 -27px; }
+  h3.dry { background-position: 0 -54px; }
+}
+
+ul#selfservice-prices{
+  list-style: none outside none;
+  float: left;
+}
+
+ul#selfservice-prices li{
+	float: left;
+	height: 60px;
+	width: 120px;
+	margin: 0 3px 35px;
+	padding: 250px 0 0;
+	text-align: center;
+  background-image: url("../images/laundromats1.png");
+  background-repeat: no-repeat;
+}
+
+#small        { background-position: 0 0}
+#medium       { background-position: -120px 0}
+#large        { background-position: -240px 0}
+#larger       { background-position: -360px 0}
+#dryer        { background-position: -480px 0}
+
+#dropmain{
+  float: left;
+  width: 100%;
+}
+
+#calculator{
+	padding: 100px 0;
+  background: url(../images/line.png) no-repeat right center;
+}
+
+#ajaxcrap{
+  padding: 150px 0 0;
+}
+
+@media handheld, only screen and (max-width: 767px) {
+  #calculator{
+    padding: 25px 0;
+    background:none;
+  }
+  #ajaxcrap{
+    padding: 25px 0 0;
+  }
+}
+
+.blue{
+  color: #00A6FF;
+}
+
+ul#dryclean-items{
+	list-style: none outside none;
+  float: left;
+}
+
+ul#dryclean-items li{
+	float: left;
+	height: 60px;
+	width: 140px;
+	margin: 0 35px 35px;
+	background-image: url("../images/dryclean_items13.png");
+  background-repeat: no-repeat;
+	padding: 140px 0 0;
+	text-align: center;
+}
+
+ul#dryclean-items li.long{
+	padding: 280px 0 0;
+	height: 60px;
+}
+
+/*
+#dryclean-tie         { background-position: 0 0 }
+#dryclean-shirt       { background-position: -140px 0 }
+#dryclean-vest        { background-position: -280px 0 }
+#dryclean-blouse      { background-position: -420px 0 }
+#dryclean-skirt       { background-position: 0 -140px }
+#dryclean-sweater     { background-position: -140px -140px }
+#dryclean-pants       { background-position: -280px -140px }
+#dryclean-jacket      { background-position: -420px -140px }
+#dryclean-suits       { background-position: 0 -280px }
+#dryclean-dress       { background-position: -140px -280px }
+#dryclean-blankets    { background-position: -280px -280px }
+#dryclean-comforter   { background-position: -420px -280px }
+#dryclean-downvest    { background-position: -280px -420px }
+#dryclean-coat        { background-position: -420px -420px }
+#dryclean-longcoat    { background-position: 0 -560px }
+#dryclean-longdowncoat{ background-position: -140px -560px }
+#dryclean-leather     { background-position: -280px -560px }
+*/
+
+#dryclean-tie         { background-position: 0 0}
+#dryclean-shirt       { background-position: -140px 0}
+#dryclean-vest        { background-position: -280px 0}
+#dryclean-blouse      { background-position: -420px 0}
+#dryclean-skirt       { background-position: -560px 0}
+#dryclean-sweater     { background-position: -700px 0}
+#dryclean-pants       { background-position: -840px 0}
+#dryclean-jacket      { background-position: -980px 0}
+#dryclean-suits       { background-position: -1120px 0}
+#dryclean-dress       { background-position: -1260px 0}
+#dryclean-blankets    { background-position: -1400px 0}
+#dryclean-comforter   { background-position: -1540px 0}
+#dryclean-downvest    { background-position: -1680px 0}
+#dryclean-coat        { background-position: -1820px 0}
+#dryclean-longcoat    { background-position: -1960px 0}
+#dryclean-longdowncoat{ background-position: -2100px 0}
+#dryclean-leather     { background-position: -2240px 0}
+
+#disclaimer{
+  clear: left;
+  padding: 0 70px;
+	border-width: 1px;
+  border-style: solid;
+  border-color: #DADADA #FFFFFF #FFFFFF #DADADA;
+  background: #EEEEEE url(../images/alert.png) no-repeat 20px center;
+  margin: 0 0 20px;
+}
+
+/* LOCATION */
+
+#location{
+	margin-top: 25px;
+}
+
+#location #map{
+	border-width: 1px;
+  border-style: solid;
+  border-color: #DADADA #FFFFFF #FFFFFF #DADADA;
+}
+
+
+/* -----------------------------------------
+   Page Name 1
+----------------------------------------- */
+
+
+
+
+/* -----------------------------------------
+   Page Name 2
+----------------------------------------- */
+
+

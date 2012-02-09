@@ -1,0 +1,39 @@
+<div class="container">
+	<div class="row">
+
+		<div class="nine columns hide-on-phones">
+
+			<h3>Welcome to Foundation!</h3>
+			<h4>Listing tickets</h4>
+			
+
+			<table>
+			  <tr>
+			    <th>Name</th>
+			    <th>Phone</th>
+			    <th>Email</th>
+			    <th>Ready</th>
+			    <th></th>
+			    <th></th>
+			    <th></th>
+			  </tr>
+
+			<% @tickets.each do |ticket| %>
+			  <tr>
+			    <td><%= ticket.name %></td>
+			    <td><%= ticket.phone %></td>
+			    <td><%= ticket.email %></td>
+			    <td><%= ticket.ready %></td>
+			    <td><%= link_to 'Show', ticket %></td>
+			    <td><%= link_to 'Edit', edit_ticket_path(ticket) %></td>
+			    <td><%= link_to 'Destroy', ticket, :confirm => 'Are you sure?', :method => :delete %></td>
+			  </tr>
+			<% end %>
+			</table>
+		</div>
+		
+		<div class="three columns">
+			<%= link_to 'New Ticket', new_ticket_path %>
+		</div>
+	</div>
+</div>

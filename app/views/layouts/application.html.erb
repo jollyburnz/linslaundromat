@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8" />
+
+	<!-- Set the viewport width to device width for mobile -->
+	<meta name="viewport" content="width=device-width" />
+  <title>Linslaundromat</title>
+
+	<%= stylesheet_link_tag :all %>
+	<%= javascript_include_tag "foundation", "app", "rails", "application" %>
+
+  <%= csrf_meta_tag %>
+</head>
+<body>
+	<div id="top_nav">
+		<div class="container">
+			<div class="row">
+
+			</div>
+		</div>
+	</div>
+	<div id="header">
+		<div class="row">
+			<div class="six columns">
+				<a id="logo" href="/" title="Home">Home</a>			
+	    </div>
+      <div class="six columns">
+        <div id="navigation" class="hide-on-phones">
+          <ul>
+            <li class="<%= 'active' if current_page?(home_index_path) %>"><%= link_to "Store", home_index_path, :id => "storemenu" %></li>
+            <li class="<%= 'active' if current_page?(pricing_index_path) %>"><%= link_to "Prices", pricing_index_path, :id => "pricesmenu" %></li>
+            <li class="<%= 'active' if current_page?(information_index_path) %>"><%= link_to "Location", information_index_path, :id =>"locationmenu" %></li>
+          </ul>
+        </div>
+	    </div>
+		</div>
+	</div>
+	
+	<div id="main">
+		<%= yield %>
+	</div>
+	<!--
+	<strong class="show-on-desktops">You are on a desktop machine.</strong>
+	<strong class="show-on-tablets">You are on a tablet device.</strong>
+	<strong class="show-on-phones">You are on a smartphone like an iPhone or Android phone.</strong>
+	<br/>
+	<strong class="hide-on-desktops">You are not on a desktop machine.</strong>
+	<strong class="hide-on-tablets">You are not on a tablet device.</strong>
+	<strong class="hide-on-phones">You are not on a smartphone like an iPhone or Android phone.</strong>
+	<br/>
+  -->
+	
+</body>
+</html>

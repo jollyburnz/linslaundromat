@@ -1,0 +1,24 @@
+<div class="container">
+	<div class="row">
+
+		<div class="eight columns">
+      <a id="selfservice"></a><h3 class="self">Self Service Prices</h3>
+      <div class="content"><%= render "selfservice" %></div>
+      <a id="dropservice"></a><h3 class="drop">Drop-Off Service Price Calculator</h3>
+      <div class="content"><%= render "drop" %></div>
+      <a id="dryclean"></a><h3 class="dry">Dry Clean Prices</h3>
+      <div class="content"><%= render "dry" %></div>
+    </div>
+		
+		<div class="four columns">
+			<div id="sidemenu" class="hide-on-phones">
+				<ul>
+					<li class="selected"><a id="selfsidemenu" href="#selfservice">Self-Service Prices</a></li>
+					<li><a id="dropsidemenu" href="#dropservice">Drop-Off Price Calculator</a></li>
+					<li><a id="drysidemenu" href="#dryclean">Dry Cleaning Prices</a></li>
+				</ul>	
+			</div>
+		</div>
+		
+	</div>
+</div>
