@@ -178,15 +178,15 @@ h3.self, h3.drop, h3.dry{
 
 h3.self { background-position: 0 0; }
 
-h3.drop { background-position: 0 -35px; }
+h3.drop { background-position: 0 -70px; }
 
-h3.dry { background-position: 0 -70px; }
+h3.dry { background-position: 0 -140px; }
 
 @media handheld, only screen and (max-width: 767px) {
   h3.self, h3.drop, h3.dry{ padding-left: 35px; background: url(../images/selfdropdry1.png) no-repeat; }
   h3.self { background-position: 0 0; }
-  h3.drop { background-position: 0 -27px; }
-  h3.dry { background-position: 0 -54px; }
+  h3.drop { background-position: 0 -54px; }
+  h3.dry { background-position: 0 -108px; }
 }
 
 ul#selfservice-prices{
