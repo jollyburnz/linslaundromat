@@ -10,7 +10,41 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111222214109) do
+ActiveRecord::Schema.define(:version => 20120214222518) do
+
+  create_table "order_items", :force => true do |t|
+    t.integer "order_id"
+    t.integer "product_id"
+    t.integer "quantity",   :default => 0
+  end
+
+  create_table "orders", :force => true do |t|
+    t.string   "email"
+    t.string   "bill_firstname"
+    t.string   "bill_lastname"
+    t.string   "bill_address"
+    t.string   "bill_aptnumber"
+    t.string   "bill_city"
+    t.integer  "bill_state"
+    t.string   "bill_zipcode"
+    t.string   "ship_firstname"
+    t.string   "ship_lastname"
+    t.string   "ship_address"
+    t.string   "ship_aptnumber"
+    t.string   "ship_city"
+    t.integer  "ship_state"
+    t.string   "ship_zipcode"
+    t.string   "authorization"
+    t.boolean  "paid",           :default => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "products", :force => true do |t|
+    t.string  "name"
+    t.text    "description"
+    t.integer "price",       :default => 0
+  end
 
   create_table "tickets", :force => true do |t|
     t.string   "name"

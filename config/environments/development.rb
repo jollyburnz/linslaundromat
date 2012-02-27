@@ -1,4 +1,10 @@
 Linslaundromat::Application.configure do
+
+  ActiveMerchant::Billing::Base.mode = :test #required for Braintree test mode
+  AM_GATEWAY_MERCHANT_ID = "bw5y66f86cn4zyfg"
+  AM_GATEWAY_PUBLIC_KEY = "7p5ms8t3mr64xqpb"
+  AM_GATEWAY_PRIVATE_KEY = "myz2q7tzkz2j83yr"
+
   # Settings specified here will take precedence over those in config/application.rb
 
   # In the development environment your application's code is reloaded on

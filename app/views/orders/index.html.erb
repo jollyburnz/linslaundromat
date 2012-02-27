@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="columns twelve">
+    <table>
+      <tr>
+        <th>NUMBER</th><th>CUSTOMER NAME</th><th>ADDRESS</th><th>ORDER SUMMARY</th><th>ORDERED AT</th>
+      </tr>
+      <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.reference_number %></td>
+        <td><%= "#{order.bill_firstname} #{order.bill_lastname}" %></td>
+        <td><%= "#{order.bill_address} #{order.bill_city} #{order.bill_state} #{order.bill_zipcode}" %></td>
+        <td><%= order.summary.join('<br/>').html_safe %></td>
+        <td><%= order.created_at.strftime("%r") %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

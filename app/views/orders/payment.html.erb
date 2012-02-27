@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="columns twelve">
+    <h1>Confirm & Pay</h1>
+    <% form_for(:credit_card, :url => orders_url) do |cc_form| %>
+      <div style="float: left; width: 50%">
+        <h2>Order Summary</h2>
+        <table>
+          <tr><th>Product</th><th>Price</th><th>Quantity</th></tr>
+          <% @order.order_items.each do |item| %>
+            <tr>
+              <td><%= item.product.name %><br/><%= item.product.description %></td>
+              <td><%= format_money(item.product.price) %></td>
+              <td><%= item.quantity %></td>
+            </tr>
+          <% end %>
+          <tr>
+            <td colspan="3" align="right">Total: <%= format_money(@order.price) %></td>
+          </tr>
+        </table>
+        <p><%= submit_tag("Submit Payment") %></p>
+      </div>
+      <div style="float: left; width: 50%" >
+        <h2>Billing Information</h2>
+        <p>First Name:<br/><%= cc_form.text_field(:first_name) %></p>
+        <p>Last Name:<br/><%= cc_form.text_field(:last_name) %></p>
+        <p>Credit Card Type: <br/><%= cc_form.select(:type, OrdersController::CARD_TYPES) %></p>
+        <p>Credit Card Number: <br/><%= cc_form.text_field(:number, :size => 16) %></p>
+        <p>Credit Card Expiration: <br/>
+          <%= cc_form.text_field(:month, :size => 2) %> /
+          <%= cc_form.text_field(:year, :size => 4) %></p>
+        <p>Credit Card Verification<br/><%= cc_form.text_field(:verification_value, :size => 4) %></p>
+      </div>
+      <%= hidden_field_tag(:order_id, @order.id) %>
+      <%= hidden_field_tag(:confirmed, 1) %>
+    <% end %>
+  </div>
+</div>

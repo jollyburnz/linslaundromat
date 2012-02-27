@@ -1,13 +1,15 @@
 Linslaundromat::Application.routes.draw do
   match 'pricing/calculator' => 'pricing#calculator', :via => [:get]
-  
+
   get "pricing/index"
 
   get "information/index"
 
   get "home/index"
-    
+
   resources :tickets
+
+  resources :orders
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
