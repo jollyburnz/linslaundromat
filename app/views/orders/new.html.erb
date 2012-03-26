@@ -1,51 +1,68 @@
 <div class="row">
-  <div class="columns twelve">
+  <div class="columns six">
     <h1> Order Form </h1>
     <% error_messages_for (:order) %>
     <% form_for(@order) do |order_form| -%>
-      <div style="float: left; width: 50%">
-        <h2>Your Order</h2>
-        <%= fields_for :order_items do |item_form| %>
-          <table>
-            <tr><th>Products</th><th>Prices</th><th>Quantity</th></tr>
-            <% @order_items.each do |item| %>
-              <tr>
-                <td>
-                  <%= item.product.name %><%= item_form.hidden_field(:product_id, :index => nil, :value => item.product_id)%><br/>
-                  <%= item.product.description  %>
-                </td>
-                <td><%= format_money(item.product.price) %></td>
-                <td><%= item_form.text_field(:quantity, :index => nil, :value => item.quantity || 0, :size => 2) %></td>
-              </tr>
-            <% end %>
-          </table>
-        <% end %>
-        <p><%= submit_tag('Next ->') %></p>
-      </div>
+  
+      <h2>Your Order</h2>
+      <%= fields_for :order_items do |item_form| %>
+        <table>
+          <tr><th>Products</th><th>Prices</th><th>Quantity</th></tr>
+          <% @order_items.each do |item| %>
+            <tr>
+              <td>
+                <%= item.product.name %><%= item_form.hidden_field(:product_id, :index => nil, :value => item.product_id)%><br/>
+                <%= item.product.description  %>
+              </td>
+              <td><%= format_money(item.product.price) %></td>
+              <td><%= item_form.text_field(:quantity, :index => nil, :value => item.quantity || 0, :size => 2) %></td>
+            </tr>
+          <% end %>
+        </table>
+      <% end %>
+      <p><%= submit_tag('Next ->') %></p>
 
-      <div style="float: left; width: 50%;">
+      <div>
         <h2>Contact Information</h2>
-        <p>Email:<br/><%= order_form.text_field(:email) %></p>
+        <p>Email:<br/><%= order_form.text_field :email, :"data-bind" => "value: emailAddress,  valueUpdate: 'afterkeydown'" %></p>
         <h2>Billing Information</h2>
-        <p>First Name:<br/><%= order_form.text_field(:bill_firstname) %></p>
-        <p>Last Name:<br/><%= order_form.text_field(:bill_lastname) %></p>
-        <p>Address:<br/><%= order_form.text_field(:bill_address) %></p>
-        <p>Apt #:<br/><%= order_form.text_field(:bill_aptnumber) %></p>
-        <p>City:<br/><%= order_form.text_field(:bill_city) %></p>
-        <p>State:<br/><%= order_form.text_field(:bill_state) %></p>
-        <p>Zipcode:<br/><%= order_form.text_field(:bill_zipcode) %></p>
+        <p>First Name:<br/><%= order_form.text_field :bill_firstname, :"data-bind" => "value: billFirst, valueUpdate: 'afterkeydown'" %></p>
+        <p>Last Name:<br/><%= order_form.text_field :bill_lastname, :"data-bind" => "value: billLast, valueUpdate: 'afterkeydown'" %></p>
+        <p>Address:<br/><%= order_form.text_field :bill_address, :"data-bind" => "value: billAddress, valueUpdate: 'afterkeydown'" %></p>
+        <p>Apt #:<br/><%= order_form.text_field :bill_aptnumber, :"data-bind" => "value: billApt, valueUpdate: 'afterkeydown'" %></p>
+        <p>City:<br/><%= order_form.text_field :bill_city, :"data-bind" => "value: billCity, valueUpdate: 'afterkeydown'" %></p>
+        <p>State:<br/><%= order_form.text_field :bill_state, :"data-bind" => "value: billState, valueUpdate: 'afterkeydown'"%></p>
+        <p>Zipcode:<br/><%= order_form.text_field :bill_zipcode, :"data-bind" => "value: billZip, valueUpdate: 'afterkeydown'" %></p>
         <h2>Shipping Information</h2>
-        <p>First Name:<br/><%= order_form.text_field(:ship_firstname) %></p>
-        <p>Last Name:<br/><%= order_form.text_field(:ship_lastname) %></p>
-        <p>Address:<br/><%= order_form.text_field(:ship_address) %></p>
-        <p>Apt #:<br/><%= order_form.text_field(:ship_aptnumber) %></p>
-        <p>City:<br/><%= order_form.text_field(:ship_city) %></p>
-        <p>State:<br/><%= order_form.text_field(:ship_state) %></p>
-        <p>Zipcode:<br/><%= order_form.text_field(:ship_zipcode) %></p>
+        <p>First Name:<br/><%= order_form.text_field :ship_firstname, :"data-bind" => "value: shipFirst, valueUpdate: 'afterkeydown'" %></p>
+        <p>Last Name:<br/><%= order_form.text_field :ship_lastname, :"data-bind" => "value: shipLast, valueUpdate: 'afterkeydown'" %></p>
+        <p>Address:<br/><%= order_form.text_field :ship_address, :"data-bind" => "value: shipAddress, valueUpdate: 'afterkeydown'" %></p>
+        <p>Apt #:<br/><%= order_form.text_field :ship_aptnumber, :"data-bind" => "value: shipApt, valueUpdate: 'afterkeydown'" %></p>
+        <p>City:<br/><%= order_form.text_field :ship_city, :"data-bind" => "value: shipCity, valueUpdate: 'afterkeydown'" %></p>
+        <p>State:<br/><%= order_form.text_field :ship_state, :"data-bind" => "value: shipState, valueUpdate: 'afterkeydown'" %></p>
+        <p>Zipcode:<br/><%= order_form.text_field :ship_zipcode, :"data-bind" => "value: shipZip, valueUpdate: 'afterkeydown'" %></p>
       </div>
-
 
     <% end %>
+  </div>
+
+  <div class="columns six">
+    <h4>Contact</h4>
+    Email: <strong data-bind="text: emailAddress"></strong><br/>
+    First Name: <strong data-bind="text: billFirst"></strong><br/>
+    Last Name: <strong data-bind="text: billLast"></strong><br/>
+    <h4>Billing Address</h4>
+    Address: <strong data-bind="text: billAddress"></strong><br/>
+    Apt Number: <strong data-bind="text: billApt"></strong><br/>
+    City: <strong data-bind="text: billCity"></strong><br/>
+    State: <strong data-bind="text: billState"></strong><br/>
+    Zipcode: <strong data-bind="text: billZip"></strong><br/>
+    <h4>Shipping Address</h4>
+    Address: <strong data-bind="text: shipAddress"></strong><br/>
+    Apt Number: <strong data-bind="text: shipApt"></strong><br/>
+    City: <strong data-bind="text: shipCity"></strong><br/>
+    State: <strong data-bind="text: shipState"></strong><br/>
+    Zipcode: <strong data-bind="text: shipZip"></strong><br/>
   </div>
 </div>
 
@@ -121,15 +138,36 @@
 
 <script type="text/javascript">
   /*<![CDATA[*/
-  var viewModel = {
-  stringValue : ko.observable("Hello"),
-  passwordValue : ko.observable("mypass"),
-  booleanValue : ko.observable(true),
-  optionValues : ["Alpha", "Beta", "Gamma"],
-  selectedOptionValue : ko.observable("Gamma"),
-  multipleSelectedOptionValues : ko.observable(["Alpha"]),
-  radioSelectedOptionValue : ko.observable("Beta")
-  };
-  ko.applyBindings(viewModel);
+// var viewModel = {
+//   stringValue : ko.observable("Hello"),
+//   passwordValue : ko.observable("mypass"),
+//   booleanValue : ko.observable(true),
+//   optionValues : ["Alpha", "Beta", "Gamma"],
+//   selectedOptionValue : ko.observable("Gamma"),
+//   multipleSelectedOptionValues : ko.observable(["Alpha"]),
+//   radioSelectedOptionValue : ko.observable("Beta")
+//   };
+//   ko.applyBindings(viewModel);
   /*]]>*/
+
+var paymentModel = {
+  emailAddress: ko.observable(),
+  billFirst: ko.observable(),
+  billLast: ko.observable(),
+  billAddress: ko.observable(),
+  billApt: ko.observable(),
+  billCity: ko.observable(),
+  billState: ko.observable(),
+  billZip: ko.observable(),
+  shipFirst: ko.observable(),
+  shipLast: ko.observable(),
+  shipAddress: ko.observable(),
+  shipApt: ko.observable(),
+  shipCity: ko.observable(),
+  shipState: ko.observable(),
+  shipZip: ko.observable()
+};
+
+ko.applyBindings(paymentModel);
+
 </script>
