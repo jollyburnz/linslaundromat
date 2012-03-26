@@ -93,7 +93,9 @@ a#logo:hover{
 #navigation ul li.active a#locationmenu { background-position: 0 -50px; }
 
 #main{
-	margin-top: 145px;
+//margin-top: 145px;
+  position: relative;
+  top: 145px;
 }
 
 /* -----------------------------------------
@@ -119,8 +121,11 @@ a#logo:hover{
 }
 
 a#selfservice, a#dropservice, a#dryclean{
-	padding-top: 130px;
+  position: relative;
+  top: -145px;
 }
+
+
 
 a#selfsidemenu, a#dropsidemenu, a#drysidemenu{
 	padding-left:45px;
