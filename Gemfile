@@ -9,6 +9,9 @@ gem 'mysql2', '~> 0.2.6'
 gem "rake", "0.8.7"
 gem "activemerchant", "~> 1.20.3"
 gem "money", "<= 3.7.1"
+gem "guard"
+gem "guard-coffeescript"
+gem "coffee-script"
 
 # Use unicorn as the web server
 # gem 'unicorn'

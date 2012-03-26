@@ -92,7 +92,6 @@ a#logo:hover{
 #navigation ul li a#locationmenu:hover { background-position: 0 -25px; }
 #navigation ul li.active a#locationmenu { background-position: 0 -50px; }
 
-
 #main{
 	margin-top: 145px;
 }
